@@ -114,7 +114,7 @@ def find_best_rhymes_2(phones, word, pos):
             phones[i] = "(M|N)"
 
     total_words = set()
-    for search_str in [f"{phones[-2]} {phones[-1]}$", f"{phones[-2]} ([^\s]+) {phones[-1]}$", f"{phones[-2]} {phones[-1]}$"]:
+    for search_str in [f"{phones[-2]} {phones[-1]}$", f"{phones[-2]} ([^\s]+) {phones[-1]}$"]:
         words = pr.search(search_str)
         # filter out pos and syllable count
         words = [w for w in words if word_to_pos.get(w, "") == pos and
